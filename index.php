@@ -24,13 +24,12 @@
 					<!--/left-->
 					<div class="top-hny-left-content col-lg-6 pl-lg-0">
 						<h6>Upto 20% off on Redmi Note 9 Series, <a href="#" target="_blank"> Click here for <span
-									class="fa fa-hand-o-right hand-icon" aria-hidden="true"></span> <span
-									class="hignlaite">More details</span></a></h6>
+							class="fa fa-hand-o-right hand-icon" aria-hidden="true"></span> <span
+							class="hignlaite">More details</span></a></h6>
 					</div>
 					<!--//left-->
 					<!--/right-->
 					<ul class="top-hnt-right-content col-lg-6">
-
 						<li class="button-log usernhy">
 							<a class="btn-open" href="login.php">
 								<span class="fa fa-user" aria-hidden="true"></span>
@@ -48,35 +47,30 @@
 						</li>
 					</ul>
 					<!--//right-->
-				
 
-					
 				</div>
 			</div>
 			<!--/nav-->
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid serarc-fluid">
 					<a class="navbar-brand" href="index.html">
-						Spry<span class="lohny">S</span>tore</a>
+						fonzone</a>
 					<!-- if logo is image enable this   
 							<a class="navbar-brand" href="#index.html">
 								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
 							</a> -->
 					<!--/search-right-->
 					<div class="search-right">
-
 						<a href="#search" title="search"><span class="fa fa-search mr-2" aria-hidden="true"></span>
 							<span class="search-text">Search here</span></a>
 						<!-- search popup -->
 						<div id="search" class="pop-overlay">
 							<div class="popup">
-
 								<form action="#" method="post" class="search-box">
 									<input type="search" placeholder="Keyword" name="search" required="required"
 										autofocus="">
 									<button type="submit" class="btn">Search</button>
 								</form>
-
 							</div>
 							<a class="close" href="#">×</a>
 						</div>
@@ -98,55 +92,54 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="about.html">What We Offer</a>
-							  </li>
-
-
+							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="contact.html">Contact</a>
 							</li>
 						</ul>
-
 					</div>
 				</div>
 			</nav>
 			<!--//nav-->
 		</header>
-		<div class="bannerhny-content">
-
-			<!--/banner-slider-->
-			<div class="content-baner-inf">
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-						</div>
-						<div class="carousel-item item2">
-						</div>
-						<div class="carousel-item item3">
-						</div>
-						<div class="carousel-item item4">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div>
-			<!--//banner-slider-->
-			<!--//banner-slider-->
-		</div>
 	</div>
 </section>
+
+<div id="demo" class="carousel slide" data-ride="carousel" data-interval="3000" data-pause="false">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+	<li data-target="#demo" data-slide-to="2"></li>
+	<li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets\images\banner1.jpg" alt="banner1" style="width:100%;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\images\banner2.jpg" alt="banner2" style="width:100%;">
+    </div>
+    <div class="carousel-item">
+      <img src="assets\images\banner3.jpg" alt="banner3" style="width:100%;">
+	</div>
+	<div class="carousel-item">
+      <img src="assets\images\banner4.jpg" alt="banner4" style="width:100%;">
+	</div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
 
 <section class="w3l-ecommerce-main">
 	<!-- /products-->
@@ -921,122 +914,122 @@
 <!-- //customers-6-->
 
 
-  <section class="w3l-footer-22">
-      <!-- footer-22 -->
-      <div class="footer-hny py-5">
-          <div class="container py-lg-5">
-              <div class="text-txt row">
-                  <div class="left-side col-lg-4">
-                      <h3><a class="logo-footer" href="index.html">
-                            Spry<span class="lohny">S</span>tore</a></h3>
-                      <!-- if logo is image enable this   
-                                    <a class="navbar-brand" href="#index.html">
-                                        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-                                    </a> -->
-                      <p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
-                          a ligula quam. Ut blandit eu leo non suscipit. </p>
-                      <ul class="social-footerhny mt-lg-5 mt-4">
+<section class="w3l-footer-22">
+	<!-- footer-22 -->
+	<div class="footer-hny py-5">
+		<div class="container py-lg-5">
+			<div class="text-txt row">
+				<div class="left-side col-lg-4">
+					<h3><a class="logo-footer" href="index.html">
+						Spry<span class="lohny">S</span>tore</a></h3>
+					<!-- if logo is image enable this   
+								<a class="navbar-brand" href="#index.html">
+									<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+								</a> -->
+					<p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
+						a ligula quam. Ut blandit eu leo non suscipit. </p>
+					<ul class="social-footerhny mt-lg-5 mt-4">
 
-                          <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-                          </li>
-                          <li><a class="twitter" href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                          </li>
-                          <li><a class="google" href="#"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
-                          </li>
-                          <li><a class="instagram" href="#"><span class="fa fa-instagram" aria-hidden="true"></span></a>
-                          </li>
-                      </ul>
-                  </div>
+						<li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a>
+						</li>
+						<li><a class="twitter" href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a>
+						</li>
+						<li><a class="google" href="#"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
+						</li>
+						<li><a class="instagram" href="#"><span class="fa fa-instagram" aria-hidden="true"></span></a>
+						</li>
+					</ul>
+				</div>
 
-                  <div class="right-side col-lg-8 pl-lg-5">
-                      <h4>Women's Day Special Offer
-                        All Branded Sandals are Flat 50% Discount</h4>
-                      <div class="sub-columns">
-                          <div class="sub-one-left">
-                              <h6>Useful Links</h6>
-                              <div class="footer-hny-ul">
-                                  <ul>
-                                      <li><a href="index.html">Home</a></li>
-                                      <li><a href="about.html">About</a></li>
-                                      <li><a href="#">Blog</a></li>
-                                      <li><a href="contact.html">Contact</a></li>
-                                  </ul>
-                                  <ul>
-                                      <li><a href="#">Careers</a></li>
-                                      <li><a href="#">Privacy Policy</a></li>
-                                      <li><a href="#">Terms and Conditions</a></li>
-                                      <li><a href="contact.html">Support</a></li>
-                                  </ul>
-                              </div>
+				<div class="right-side col-lg-8 pl-lg-5">
+					<h4>Women's Day Special Offer
+					All Branded Sandals are Flat 50% Discount</h4>
+					<div class="sub-columns">
+						<div class="sub-one-left">
+							<h6>Useful Links</h6>
+							<div class="footer-hny-ul">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About</a></li>
+									<li><a href="#">Blog</a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<ul>
+									<li><a href="#">Careers</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">Terms and Conditions</a></li>
+									<li><a href="contact.html">Support</a></li>
+								</ul>
+							</div>
 
-                          </div>
-                          <div class="sub-two-right">
-                              <h6>Our Store</h6>
-                              <p class="mb-5">49436 Broaddus Honey Court Avenue, Madisonville KY 95020, United States of America</p>
+						</div>
+						<div class="sub-two-right">
+							<h6>Our Store</h6>
+							<p class="mb-5">49436 Broaddus Honey Court Avenue, Madisonville KY 95020, United States of America</p>
 
-                              <h6>We accept:</h6>
-                              <ul>
-                                  <li><a class="pay-method" href="#"><span class="fa fa-cc-visa"
-                                              aria-hidden="true"></span></a>
-                                  </li>
-                                  <li><a class="pay-method" href="#"><span class="fa fa-cc-mastercard"
-                                              aria-hidden="true"></span></a>
-                                  </li>
-                                  <li><a class="pay-method" href="#"><span class="fa fa-cc-paypal"
-                                              aria-hidden="true"></span></a>
-                                  </li>
-                                  <li><a class="pay-method" href="#"><span class="fa fa-cc-amex"
-                                              aria-hidden="true"></span></a>
-                                  </li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <div class="below-section row">
-                  <div class="columns col-lg-6">
-                      <ul class="jst-link">
-                          <li><a href="#">Privacy Policy </a> </li>
-                          <li><a href="#">Term of Service</a></li>
-                          <li><a href="contact.html">Customer Care</a> </li>
-                      </ul>
-                  </div>
-                  <div class="columns col-lg-6 text-lg-right">
-                      <p>© 2020 Fonzone. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
-                              W3Layouts</a>
-                      </p>
-                  </div>
-                  <button onclick="topFunction()" id="movetop" title="Go to top">
-                      <span class="fa fa-angle-double-up"></span>
-                  </button>
-              </div>
-          </div>
-      </div>
-      <!-- //titels-5 -->
-      <!-- move top -->
+							<h6>We accept:</h6>
+							<ul>
+								<li><a class="pay-method" href="#"><span class="fa fa-cc-visa"
+											aria-hidden="true"></span></a>
+								</li>
+								<li><a class="pay-method" href="#"><span class="fa fa-cc-mastercard"
+											aria-hidden="true"></span></a>
+								</li>
+								<li><a class="pay-method" href="#"><span class="fa fa-cc-paypal"
+											aria-hidden="true"></span></a>
+								</li>
+								<li><a class="pay-method" href="#"><span class="fa fa-cc-amex"
+											aria-hidden="true"></span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="below-section row">
+				<div class="columns col-lg-6">
+					<ul class="jst-link">
+						<li><a href="#">Privacy Policy </a> </li>
+						<li><a href="#">Term of Service</a></li>
+						<li><a href="contact.html">Customer Care</a> </li>
+					</ul>
+				</div>
+				<div class="columns col-lg-6 text-lg-right">
+					<p>© 2020 Fonzone. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
+							W3Layouts</a>
+					</p>
+				</div>
+				<button onclick="topFunction()" id="movetop" title="Go to top">
+					<span class="fa fa-angle-double-up"></span>
+				</button>
+			</div>
+		</div>
+	</div>
+	<!-- //titels-5 -->
+	<!-- move top -->
 
-      <script>
-          // When the user scrolls down 20px from the top of the document, show the button
-          window.onscroll = function () {
-              scrollFunction()
-          };
+	<script>
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function () {
+			scrollFunction()
+		};
 
-          function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                  document.getElementById("movetop").style.display = "block";
-              } else {
-                  document.getElementById("movetop").style.display = "none";
-              }
-          }
+		function scrollFunction() {
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("movetop").style.display = "block";
+			} else {
+				document.getElementById("movetop").style.display = "none";
+			}
+		}
 
-          // When the user clicks on the button, scroll to the top of the document
-          function topFunction() {
-              document.body.scrollTop = 0;
-              document.documentElement.scrollTop = 0;
-          }
-      </script>
-      <!-- /move top -->
-  </section>
+		// When the user clicks on the button, scroll to the top of the document
+		function topFunction() {
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+	<!-- /move top -->
+</section>
 
 
 <script src="assets/js/jquery-3.3.1.min.js"></script>
