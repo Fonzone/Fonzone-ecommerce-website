@@ -129,7 +129,7 @@
                                 <th>Price</th>
                                 <th>Quantity</th>
                                 <th>Total Price</th>
-                                <th><a href="action.php?clear=all" class="badge-danger badge p-1" onclick="return confirm('Are you sure want to clear your cart?');"><i class="fa fa-trash"></i>&nbsp;&nbsp;Clear Cart</a> </th>
+                                <th><a href="action.php?clear=all" class="badge-danger badge p-1" onclick="return confirm('Are you sure you want to clear your cart?');"><i class="fa fa-trash"></i>&nbsp;&nbsp;Clear Cart</a> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -150,7 +150,7 @@
                                 <input type="hidden" class="pprice" value="<?php echo $row['product_price']; ?>">          <!-- Extra fittings for using in ajax method -->
                                 <td><input type="number" class="form-control itemQty" value="<?php echo $row['quantity']; ?>" style="width:75px;"></td>
                                 <td>₹ <?php echo number_format($row['total_price'],2); ?></td>
-                                <td><a href="action.php?remove=<?php echo $row['id']; ?>" class="text danger lead" onclick="return confirm('Are you sure want to remove this item?');"><i class="fa fa-trash"></i></td>
+                                <td><a href="action.php?remove=<?php echo $row['id']; ?>" class="text danger lead" onclick="return confirm('Are you sure you want to remove this item?');"><i class="fa fa-trash"></i></td>
                             </tr>
                             <?php
                                 $grand_total += $row['total_price'];
