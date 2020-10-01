@@ -8,7 +8,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Fonzone Shopping</title>
+  <title>Fonzone :: Home</title>
+  <link rel="icon" href="assets/images/logo.jpg" type="image/jpg">
+  
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-liberty.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -38,7 +40,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid serarc-fluid">
 					<a class="navbar-brand" href="index_new.php">
-						fonzone</a>
+						Fonzone</a>
 					<!-- if logo is image enable this   
 							<a class="navbar-brand" href="#index.php">
 								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />

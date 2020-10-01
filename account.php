@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Fonzone Account</title>
+<title>Fonzone :: Account</title>
+<link rel="icon" href="assets/images/logo.jpg" type="image/jpg">
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
