@@ -1,7 +1,10 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Fonzone Signup Page</title>
+<title>Fonzone Account</title>
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,15 +24,12 @@
 	<link href="assets/css/style2.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="assets/css/style-liberty.css" rel="stylesheet" type="text/css" media="all" />
     
-    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-
 	<!-- web font -->
 	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
 	<!-- //web font -->
-
 </head>
 <body>
 <section class="w3l-banner-slider-main">
@@ -63,17 +63,26 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="login.php"><span class="fa fa-user" style="font-size:24px" aria-hidden="true"></span>&nbsp;&nbsp;Hi <?php echo "<span class='text-primary'><b>".$_SESSION['name']."</b></span>";?></a>
+								<div class="dropdown-menu bg-secondary">
+									<a class="dropdown-item active" href="account.php">Account</a>
+									<a class="dropdown-item" href="cart.php">Cart <span class="badge badge-danger cart-item"></span></a>
+									<a class="dropdown-item" href="#">Orders</a>
+									<a class="dropdown-item" href="logout.php">Logout</a>
+								</div>
+							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="index.php">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
+								<a class="nav-link" href="">About</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="contact.html">Contact</a>
+								<a class="nav-link" href="contact_new.php">Contact</a>
                             </li>
                             <li class="nav-item">
-								<a class="nav-link" href="login.php"><span class="fa fa-user" style="font-size:26px" aria-hidden="true"></span> &nbsp;&nbsp;Login</a>
+								<a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart"> <span class="badge badge-danger cart-item"></span></i></a>
 							</li>
 						</ul>
 					</div>
@@ -86,55 +95,71 @@
 <!-- main -->
 <div class="w3layouts-main"> 
 	<div class="bg-layer pb-5">
-		<h1>Create New Account</h1>
+		<h1>My Account</h1>
 		<div class="header-main col-lg-6 col-md-8 col-10">
 			<div class="main-icon">
 				<span class="fa fa-eercast"></span>
 			</div>
-			<div class="header-left-bottom">
-				<form action="#" method="post">
+			<?php
+                require 'config.php';
+                
+                $id=$_SESSION['id'];
+                $sel="select * from customer where id='$id'";
+                $res=mysqli_query($conn,$sel);  
+                    
+                while($row= mysqli_fetch_array($res))
+                {
+            ?>
+            <div class="header-left-bottom">
+                <form action="#" method="post">
                     <div class="icon1">
-						<span class="fa fa-user"></span>
-						<input type="text" placeholder="Full Name" required="" name="name"/>
+                        <span class="fa fa-user"></span>
+                        <input type="text" placeholder="Full Name" required="" name="name" value="<?php echo $row[1]; ?>"/>
                     </div>
                     <div class="icon1">
-						<span class="fa fa-mobile-phone" style="font-size: 24px;"></span>
-						<input type="text" placeholder="Mobile Number" required="" name="mobile"/>
-					</div>
-					<div class="icon1">
-						<span class="fa fa-envelope"></span>
-						<input type="email" placeholder="Email Address" required="" name="email"/>
-					</div>
-					
-					<div class="icon1">
-						<span class="fa fa-address-card"></span>
-						<textarea name="address" class="form-control border-0" rows="4" placeholder="Enter Delivery Address Here..." required=""></textarea>
-					</div>
-					<div class="icon1">
-						<span class="fa fa-lock"></span>
-						<input type="password" placeholder="Password" required="" name="password"/>
-					</div>
-					<div class="login-check">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Remember Me</label>
-					</div>
-					<div class="bottom">
-						<input type="submit" class="btn" value="Sign Up" name="signup"/>
-					</div>
-				</form>	
-			</div>
-			<div class="social">
-				<ul>
-					<li>or Signup using : </li>
-					<li><a href="#" class="facebook"><span class="fa fa-facebook"></span></a></li>
-					<li><a href="#" class="twitter"><span class="fa fa-twitter"></span></a></li>
-					<li><a href="#" class="google"><span class="fa fa-google-plus"></span></a></li>
-				</ul>
-			</div>
-			<p><kbd>Already have an account? <a href="login.php"><b>Log In</b></a></kbd></p>
-		</div>
-	</div>
-</div>	
-<!-- //main -->
+                        <span class="fa fa-mobile-phone" style="font-size: 24px;"></span>
+                        <input type="text" placeholder="Mobile Number" required="" name="mobile" value="<?php echo $row[3]; ?>"/>
+                    </div>
+                    <div class="icon1">
+                        <span class="fa fa-envelope"></span>
+                        <input type="email" placeholder="Email Address" required="" name="email" value="<?php echo $row[2]; ?>"/>
+                    </div>
+                    
+                    <div class="icon1">
+                        <span class="fa fa-address-card"></span>
+                        <textarea name="address" class="form-control border-0" rows="4" placeholder="Enter Delivery Address Here..." required=""><?php echo $row[4]; ?></textarea>
+                    </div>
+                    <div class="icon1">
+                        <span class="fa fa-lock"></span>
+                        <input type="password" placeholder="Password" required="" name="password" value="<?php echo $row[5]; ?>"/>
+                    </div>
+                    <div class="bottom">
+                        <input type="submit" class="btn" value="Update" name="update"/>
+                    </div>
+                </form>	
+            </div>
+        </div>
+    </div>
+</div>
+            <?php
+            }
+
+            if(isset($_POST['update']))
+            {
+                $name=$_POST['name'];
+                $email=$_POST['email'];
+                $mobile=$_POST['mobile'];
+                $address=$_POST['address'];
+                $password=$_POST['password'];
+
+                $query="update customer set name='$name',email='$email',mobile='$mobile',address='$address',password='$password' where id='$id'";
+                mysqli_query($conn,$query);        
+                echo '<script type="text/javascript">'; 
+                echo 'alert("Data Updated!!");'; 
+                echo '</script>';
+            }
+            ?>
+
 
 <section class="w3l-footer-22">
 	<!-- footer-22 -->
@@ -173,7 +198,7 @@
 									<li><a href="index.php">Home</a></li>
 									<li><a href="#">About</a></li>
 									<li><a href="#">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="contact_new.php">Contact</a></li>
 								</ul>
 								<ul>
 									<li><a href="#">Careers</a></li>
@@ -263,26 +288,26 @@
 </script>
 <!-- disable body scroll which navbar is in active -->
 
-<?php
-require 'config.php';
+<!-- //main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
 
-if(isset($_POST['signup']))
-{
-	$nam = $_POST['name'];
-	$mail = $_POST['email'];
-	$mob = $_POST['mobile'];
-	$address = $_POST['address'];
-	$psw = $_POST['password'];
-
-	$insert="insert into customer (name,email,mobile,address,password) values ('$nam','$mail','$mob','$address','$psw')";
-
-	mysqli_query($conn,$insert);
-	echo '<script type="text/javascript">'; 
-	echo 'alert("Registered Successfully!! Click OK to redirect to the Login page.");'; 
-	echo 'window.location.href = "login.php";';
-	echo '</script>';
-}
-?>
-
+        load_cart_item_number();
+        //To show number of cart items(showing near cart symbol in top of the home page) when clicking Add to cart. For this we need to use ajax to send a request to the server.
+        function load_cart_item_number(){
+            $.ajax({
+                url: 'action.php',
+                method: 'get',
+                data: {cartItem:"cart_item"},
+                success: function(response){
+                    $(".cart-item").html(response);
+                }
+            });
+        }
+	});
+</script>
 </body>
 </html>

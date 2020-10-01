@@ -65,7 +65,6 @@
    line-height: 50px;
    color: #232020;
    margin-bottom: 24px;
-   text-transform: uppercase;
    font-weight: 700;
  }
  
@@ -3252,7 +3251,6 @@
    line-height: 26px;
    color: #fff;
    margin: 0;
-   text-transform: uppercase;
  }
  
  .w3l-banner-slider-main .top-hny-left-content a {
@@ -3811,7 +3809,6 @@
    font-size: 30px;
    padding: 0;
    font-weight: 900;
-   text-transform: uppercase;
  }
  
  .w3l-banner-slider-main a.navbar-brand:hover {
@@ -3842,7 +3839,6 @@
  
  .w3l-banner-slider-main .navbar-light .navbar-nav .nav-link {
    color: #fff;
-   text-transform: uppercase;
    font-weight: 600;
    font-size: 14px;
  }
@@ -4000,6 +3996,10 @@
    .w3l-banner-slider-main li.transmitvcart.galssescart2.cart.cart.box_1 {
      text-align: end;
    }
+
+   .w3l-banner-slider-main li.transmitvcart.galssescart2.cart.cart.box_1 a:hover {
+    background-color:  #ff7315;
+  }
  
    .w3l-banner-slider-main span.search-text {
      display: none;
@@ -4077,7 +4077,6 @@
  
  .w3l-banner-slider-main .carousel-caption h3 {
    font-size: 62px;
-   text-transform: uppercase;
    line-height: 72px;
  }
  
@@ -4542,7 +4541,6 @@
    color: #232020;
    font-size: 16px;
    font-weight: 600;
-   text-transform: uppercase;
    font-family: 'Lato', sans-serif;
  }
  
@@ -4743,7 +4741,6 @@
    font-size: 12px;
    font-weight: 600;
    position: absolute;
-   text-transform: uppercase;
    right: 0;
    top: 0;
    cursor: pointer;
@@ -5708,7 +5705,6 @@
  .w3l-grids-hny-2 h6 {
    text-align: center;
    font-weight: 300;
-   text-transform: uppercase;
    color: #ff6768;
  }
  
@@ -6142,7 +6138,6 @@
  .video-gd-right h6 {
    color: #fff;
    font-size: 14px;
-   text-transform: uppercase;
    font-weight: 600;
  }
  
@@ -6965,7 +6960,6 @@
    font-size: 26px;
    line-height: 30px;
    margin-bottom: 20px;
-   text-transform: uppercase;
  }
  
  .w3l-footer-22 p {
@@ -7016,7 +7010,6 @@
    color: #fff;
    font-size: 20px;
    line-height: 20px;
-   text-transform: uppercase;
    margin-bottom: 25px;
  }
  
@@ -7329,7 +7322,6 @@
  }
  
  .w3l-team-main .team span.info {
-   text-transform: uppercase;
    font-weight: 600;
    color: #ff7315;
    font-size: 16px;
@@ -7529,7 +7521,6 @@
  .features-4 .features4-block h6 {
    text-align: center;
    font-weight: 300;
-   text-transform: uppercase;
    color: #ff7315;
  }
  
@@ -7757,7 +7748,6 @@
    line-height: 34px;
    color: #101d29;
    margin-bottom: 30px;
-   text-transform: uppercase;
    font-weight: 700;
  }
  
@@ -8574,7 +8564,6 @@
    color: #232020;
    font-size: 20px;
    line-height: 20px;
-   text-transform: uppercase;
    margin-bottom: 25px;
  }
  
@@ -8886,7 +8875,6 @@
  
  .w3l-ecommerce-main-inn .ecommerce-banv h6.tag-cover-9 {
    line-height: 15px;
-   text-transform: uppercase;
    color: #e6e6e6;
    font-style: normal;
    font-weight: normal;
@@ -8905,7 +8893,6 @@
    line-height: 54px;
    color: #fff;
    font-weight: bold;
-   text-transform: uppercase;
  }
  
  .w3l-ecommerce-main-inn .ecommerce-banv .button-cover-9 {
@@ -9561,12 +9548,35 @@
    -ms-border-radius: 25px;
    -o-border-radius: 25px;
  }
+
+ .w3l-ecommerce-main-inn a.transmitv-cart.ptransmitv-cart.add-to-cart.read-2 {
+  display: block;
+  width: 100%;
+  border: 2px solid #232020;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px 30px;
+  background: #232020;
+  padding: 10px 30px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+}
  
- .w3l-ecommerce-main-inn button.transmitv-cart.ptransmitv-cart.add-to-cart.read-2:hover {
-   background: #ff7315;
-   border: 2px solid #ff7315;
-   color: #fff;
- }
+.w3l-ecommerce-main-inn button.transmitv-cart.ptransmitv-cart.add-to-cart.read-2:hover {
+  background: #ff7315;
+  border: 2px solid #ff7315;
+  color: #fff;
+}
+
+.w3l-ecommerce-main-inn a.transmitv-cart.ptransmitv-cart.add-to-cart.read-2:hover {
+  background: #ff7315;
+  border: 2px solid #ff7315;
+  color: #fff;
+}
  
  .w3l-ecommerce-main-inn .sp-store-single-page a.action {
    border: 2px solid #ff7315;
@@ -9588,6 +9598,26 @@
    background: #232020;
  }
  
+ .w3l-ecommerce-main-inn .sp-store-single-page a.add-to-cart {
+  border: 2px solid #232020;
+  color: #fff;
+  background:  #232020;
+  font-size: 16px;
+  padding: 10px 30px;
+  border-radius: 25px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  font-weight: bold;
+  display: block;
+}
+
+.w3l-ecommerce-main-inn .sp-store-single-page a.add-to-cart:hover {
+  border: 2px solid #ff7315;
+  background: #ff7315;
+}
+
  .w3l-ecommerce-main-inn .sp-store-single-page .featured-products {
    margin-top: 80px;
  }
@@ -10813,7 +10843,6 @@
  
  .initialism {
    font-size: 90%;
-   text-transform: uppercase;
  }
  
  .blockquote {

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -35,10 +38,10 @@
         <!--/nav-->
         <nav class="navbar navbar-expand-lg navbar-light">
           <div class="container-fluid serarc-fluid">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="index_new.php">
               Fonzone</a>
             <!-- if logo is image enable this   
-                <a class="navbar-brand" href="#index.php">
+                <a class="navbar-brand" href="#index_new.php">
                   <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
                 </a> -->
             <!--/search-right-->
@@ -65,26 +68,35 @@
               <span class="navbar-toggler-icon fa fa-bars"> </span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Latest</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Top Selling</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php"><span class="fa fa-user" style="font-size:26px" aria-hidden="true"></span> &nbsp;&nbsp;Login</a>
-                    </li>
-                </ul>
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="login.php"><span class="fa fa-user" style="font-size:24px" aria-hidden="true"></span>&nbsp;&nbsp;Hi <?php echo "<span class='text-primary'><b>".$_SESSION['name']."</b></span>";?></a>
+                  <div class="dropdown-menu bg-secondary">
+                    <a class="dropdown-item" href="#">Account</a>
+                    <a class="dropdown-item" href="cart.php">Cart <span class="badge badge-danger cart-item"></span></a>
+                    <a class="dropdown-item" href="#">Orders</a>
+                    <a class="dropdown-item" href="logout.php">Logout</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index_new.php">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index_new.php">Latest</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="index_new.php">Top Selling</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                              </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart"> <span class="badge badge-danger cart-item"></span></i></a>
+                </li>
+              </ul>
             </div>
           </div>
         </nav>
@@ -95,7 +107,7 @@
           <nav aria-label="breadcrumb">
             <h2 class="hny-title text-center">Fonzone Shopping</h2>
             <ol class="breadcrumb mb-0">
-              <li><a href="index.php">Home</a>
+              <li><a href="index_new.php">Home</a>
                 <span class="fa fa-angle-double-right"></span></li>
               <li class="active">Contact</li>
             </ol>
@@ -167,10 +179,10 @@
 		<div class="container py-lg-5">
 			<div class="text-txt row">
 				<div class="left-side col-lg-4">
-					<h3><a class="logo-footer" href="index.php">
+					<h3><a class="logo-footer" href="index_new.php">
 						Fonzone</a></h3>
 					<!-- if logo is image enable this   
-								<a class="navbar-brand" href="#index.php">
+								<a class="navbar-brand" href="#index_new.php">
 									<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
 								</a> -->
 					<p>Lorem ipsum dolor sit amet,Ea consequuntur illum facere aperiam sequi optio consectetur.Vivamus
@@ -195,10 +207,10 @@
 							<h6>Useful Links</h6>
 							<div class="footer-hny-ul">
 								<ul>
-									<li><a href="index.php">Home</a></li>
+									<li><a href="index_new.php">Home</a></li>
 									<li><a href="#">About</a></li>
 									<li><a href="#">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="#">Contact</a></li>
 								</ul>
 								<ul>
 									<li><a href="#">Careers</a></li>
@@ -351,9 +363,25 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
+		
+		load_cart_item_number();
+            
+            //To show number of cart items(showing near cart symbol in top of the home page) when clicking Add to cart. For this we need to use ajax to send a request to the server.
+		function load_cart_item_number(){
+			$.ajax({
+				url: 'action.php',
+				method: 'get',
+				data: {cartItem:"cart_item"},
+				success: function(response){
+					$(".cart-item").html(response);
+				}
+			});
+		}
+
 		$('[data-toggle="tooltip"]').tooltip(); 
     });
 </script>
 
 </body>
 </html>
+

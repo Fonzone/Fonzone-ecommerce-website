@@ -1,37 +1,23 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-<title>Fonzone Signup Page</title>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Fonzone Logout</title>
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="assets/css/style-liberty.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Template CSS -->
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="Slide Login Form template Responsive, Login form web template, Flat Pricing tables, Flat Drop downs Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-
-	 <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
-    </script>
-
-	<!-- Custom Theme files -->
-	<link href="assets/css/style2.css" rel="stylesheet" type="text/css" media="all" />
-	<link href="assets/css/style-liberty.css" rel="stylesheet" type="text/css" media="all" />
-    
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-
-	<!-- web font -->
-	<link href="//fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
-	<!-- //web font -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!--w3l-banner-slider-main-->
 <section class="w3l-banner-slider-main">
 	<div class="top-header-content">
 		<header class="tophny-header">
@@ -67,13 +53,13 @@
 								<a class="nav-link" href="index.php">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
+								<a class="nav-link" href="">About</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="contact.html">Contact</a>
                             </li>
                             <li class="nav-item">
-								<a class="nav-link" href="login.php"><span class="fa fa-user" style="font-size:26px" aria-hidden="true"></span> &nbsp;&nbsp;Login</a>
+								<a class="nav-link" href="login.php"><span class="fa fa-user" style="font-size:24px" aria-hidden="true"></span> &nbsp;&nbsp;Login</a>
 							</li>
 						</ul>
 					</div>
@@ -83,58 +69,15 @@
 		</header>
 	</div>
 </section>
-<!-- main -->
-<div class="w3layouts-main"> 
-	<div class="bg-layer pb-5">
-		<h1>Create New Account</h1>
-		<div class="header-main col-lg-6 col-md-8 col-10">
-			<div class="main-icon">
-				<span class="fa fa-eercast"></span>
-			</div>
-			<div class="header-left-bottom">
-				<form action="#" method="post">
-                    <div class="icon1">
-						<span class="fa fa-user"></span>
-						<input type="text" placeholder="Full Name" required="" name="name"/>
-                    </div>
-                    <div class="icon1">
-						<span class="fa fa-mobile-phone" style="font-size: 24px;"></span>
-						<input type="text" placeholder="Mobile Number" required="" name="mobile"/>
-					</div>
-					<div class="icon1">
-						<span class="fa fa-envelope"></span>
-						<input type="email" placeholder="Email Address" required="" name="email"/>
-					</div>
-					
-					<div class="icon1">
-						<span class="fa fa-address-card"></span>
-						<textarea name="address" class="form-control border-0" rows="4" placeholder="Enter Delivery Address Here..." required=""></textarea>
-					</div>
-					<div class="icon1">
-						<span class="fa fa-lock"></span>
-						<input type="password" placeholder="Password" required="" name="password"/>
-					</div>
-					<div class="login-check">
-						 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i> Remember Me</label>
-					</div>
-					<div class="bottom">
-						<input type="submit" class="btn" value="Sign Up" name="signup"/>
-					</div>
-				</form>	
-			</div>
-			<div class="social">
-				<ul>
-					<li>or Signup using : </li>
-					<li><a href="#" class="facebook"><span class="fa fa-facebook"></span></a></li>
-					<li><a href="#" class="twitter"><span class="fa fa-twitter"></span></a></li>
-					<li><a href="#" class="google"><span class="fa fa-google-plus"></span></a></li>
-				</ul>
-			</div>
-			<p><kbd>Already have an account? <a href="login.php"><b>Log In</b></a></kbd></p>
-		</div>
-	</div>
-</div>	
-<!-- //main -->
+<?php
+    session_start();
+    session_destroy();
+    echo '<h1 class="text-danger text-center py-5 my-5">You have been logged out!! <br><br>
+            <a href="login.php"><i class="fa fa-hand-o-right"></i> Click here</a> to login. <br>
+            <a href="index.php"><i class="fa fa-hand-o-right"></i>  Click here</a> to go back to home page.
+        </h1>';
+    ?>
+
 
 <section class="w3l-footer-22">
 	<!-- footer-22 -->
@@ -262,27 +205,6 @@
   });
 </script>
 <!-- disable body scroll which navbar is in active -->
-
-<?php
-require 'config.php';
-
-if(isset($_POST['signup']))
-{
-	$nam = $_POST['name'];
-	$mail = $_POST['email'];
-	$mob = $_POST['mobile'];
-	$address = $_POST['address'];
-	$psw = $_POST['password'];
-
-	$insert="insert into customer (name,email,mobile,address,password) values ('$nam','$mail','$mob','$address','$psw')";
-
-	mysqli_query($conn,$insert);
-	echo '<script type="text/javascript">'; 
-	echo 'alert("Registered Successfully!! Click OK to redirect to the Login page.");'; 
-	echo 'window.location.href = "login.php";';
-	echo '</script>';
-}
-?>
 
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,8 +37,8 @@
 			<!--/nav-->
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container-fluid serarc-fluid">
-					<a class="navbar-brand" href="index.php">
-						Fonzone</a>
+					<a class="navbar-brand" href="index_new.php">
+						fonzone</a>
 					<!-- if logo is image enable this   
 							<a class="navbar-brand" href="#index.php">
 								<img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
@@ -65,8 +68,17 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto">
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="login.php"><span class="fa fa-user" style="font-size:24px" aria-hidden="true"></span>&nbsp;&nbsp;Hi <?php echo "<span class='text-primary'><b>".$_SESSION['name']."</b></span>";?></a>
+								<div class="dropdown-menu bg-secondary">
+									<a class="dropdown-item" href="#">Account</a>
+									<a class="dropdown-item" href="cart.php">Cart <span class="badge badge-danger cart-item"></span></a>
+									<a class="dropdown-item" href="#">Orders</a>
+									<a class="dropdown-item" href="logout.php">Logout</a>
+								</div>
+							</li>
 							<li class="nav-item active">
-								<a class="nav-link" href="index.php">Home</a>
+								<a class="nav-link" href="index_new.php">Home</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#latest">Latest</a>
@@ -75,13 +87,13 @@
 								<a class="nav-link" href="#top-selling">Top Selling</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#">About</a>
+								<a class="nav-link" href="">About</a>
+                            </li>
+							<li class="nav-item">
+								<a class="nav-link" href="contact_new.php">Contact</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="contact.html">Contact</a>
-                            </li>
-                            <li class="nav-item">
-								<a class="nav-link" href="login.php"><span class="fa fa-user" style="font-size:26px" aria-hidden="true"></span> &nbsp;&nbsp;Login</a>
+								<a class="nav-link" href="cart.php"><i class="fa fa-shopping-cart"> <span class="badge badge-danger cart-item"></span></i></a>
 							</li>
 						</ul>
 					</div>
@@ -127,13 +139,14 @@
   </a>
 </div>
 
+<div id="message"> </div>
 <section class="w3l-ecommerce-main">
 	<!-- /products-->
 	<div class="ecom-contenthny py-5">
 		<div class="container py-lg-5">
 			
 			<h3 class="hny-title mb-0 text-center" id="latest">Latest Smartphones</h3>
-			<p class="text-center"></p>
+			<p class="text-center">Handpicked Favourites just for you</p>
 			<!-- /row-->
 			<div class="ecom-products-grids row mt-lg-5 mt-3">
 				<?php                       // to fetch all the products from the database
@@ -146,13 +159,15 @@
 				<div class="col-lg-3 col-6 product-incfhny mt-4">
 					<div class="product-grid2 transmitv">
 						<div class="product-image2">
-							<a href="single1.php ? ID=<?php echo $row['id']; ?>">
+							<a href="single1_new.php ? ID=<?php echo $row['id']; ?>">
 								<img class="pic-1 img-fluid" src="<?php echo $row['product_image_home1']; ?>">
 								<img class="pic-2 img-fluid" src="<?php echo $row['product_image_home2']; ?>">
 							</a>
 							<ul class="social">
-								<li><a href="single1.php ? ID=<?php echo $row['id']; ?>" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-								<li><a href="login.php" data-tip="Add to Cart" data-toggle="tooltip" title="Please login to your account" onclick="return confirm('Please login to your account\n\nClick OK to redirect to the login page');"><span class="fa fa-shopping-bag"></span></a></li>
+									<li><a href="single1_new.php ? ID=<?php echo $row['id']; ?>" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+
+									<li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+									</li>
 							</ul>
 							<div class="transmitv single-item">
 							<form action="" class="form-submit">
@@ -161,14 +176,14 @@
                                 <input type="hidden" class="pprice" value="<?php echo $row['product_price_new']; ?>">
                                 <input type="hidden" class="pimage" value="<?php echo $row['product_image_home1']; ?>">
                                 <input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
-								<a href="login.php" class="transmitv-cart ptransmitv-cart add-to-cart" data-toggle="tooltip" title="Please login to your account" onclick="return confirm('Please login to your account\n\nClick OK to redirect to the login page');">
+								<button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart addItemBtn" <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ echo '';} else { echo 'data-toggle="tooltip" title="Please login to your account"';} ?>>
 									Add to Cart
-								</a>
+								</button>
 							</form>
 							</div>
 						</div>
 						<div class="product-content">
-							<h3 class="title"><a href="single1.php ? ID=<?php echo $row['id']; ?>"><?php echo $row['product_name_home']; ?></a></h3>
+							<h3 class="title"><a href="single1_new.php ? ID=<?php echo $row['id']; ?>"><?php echo $row['product_name_home']; ?></a></h3>
 							<span class="price"><del>₹ <?php echo number_format($row['product_price_old'],2); ?></del>₹ <?php echo number_format($row['product_price_new'],2); ?></span>
 						</div>
 					</div>
@@ -244,7 +259,7 @@
 	<div class="ecom-contenthny py-5">
 		<div class="container py-lg-5">
 			<h3 class="hny-title mb-0 text-center" id="top-selling">Top Selling Smartphones</h3>
-			<p class="text-center"></p>
+			<p class="text-center">Handpicked Favourites just for you</p>
 			<!-- /row-->
 			<div class="ecom-products-grids row mt-lg-5 mt-3">
 				<?php 
@@ -257,13 +272,15 @@
 				<div class="col-lg-3 col-6 product-incfhny mt-4">
 					<div class="product-grid2 transmitv">
 						<div class="product-image2">
-							<a href="single2.php ? ID=<?php echo $row['id']; ?>">
+							<a href="single2_new.php ? ID=<?php echo $row['id']; ?>">
 								<img class="pic-1 img-fluid" src="<?php echo $row['product_image_home1']; ?>">
 								<img class="pic-2 img-fluid" src="<?php echo $row['product_image_home2']; ?>">
 							</a>
 							<ul class="social">
-								<li><a href="single2.php ? ID=<?php echo $row['id']; ?>" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
-								<li><a href="login.php" data-tip="Add to Cart" data-toggle="tooltip" title="Please login to your account" onclick="return confirm('Please login to your account\n\nClick OK to redirect to the login page');"><span class="fa fa-shopping-bag"></span></a></li>
+									<li><a href="single2_new.php ? ID=<?php echo $row['id']; ?>" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+
+									<li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+									</li>
 							</ul>
 							<div class="transmitv single-item">
 							<form action="" class="form-submit">
@@ -272,14 +289,14 @@
                                 <input type="hidden" class="pprice" value="<?php echo $row['product_price_new']; ?>">
                                 <input type="hidden" class="pimage" value="<?php echo $row['product_image_home1']; ?>">
                                 <input type="hidden" class="pcode" value="<?php echo $row['product_code']; ?>">
-								<a href="login.php" class="transmitv-cart ptransmitv-cart add-to-cart" data-toggle="tooltip" title="Please login to your account" onclick="return confirm('Please login to your account\n\nClick OK to redirect to the login page');">
+								<button type="submit" class="transmitv-cart ptransmitv-cart add-to-cart addItemBtn" <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){ echo '';} else { echo 'data-toggle="tooltip" title="Please login to your account"';} ?>>
 									Add to Cart
-								</a>
+								</button>
 							</form>
 							</div>
 						</div>
 						<div class="product-content">
-							<h3 class="title"><a href="single2.php ? ID=<?php echo $row['id']; ?>"><?php echo $row['product_name_home']; ?></a></h3>
+							<h3 class="title"><a href="single2_new.php ? ID=<?php echo $row['id']; ?>"><?php echo $row['product_name_home']; ?></a></h3>
 							<span class="price"><del>₹ <?php echo number_format($row['product_price_old'],2); ?></del>₹ <?php echo number_format($row['product_price_new'],2); ?></span>
 						</div>
 					</div>
@@ -318,8 +335,8 @@
 	<div class="grids-hny-2-mian py-5">
 		<div class="container py-lg-5">
 				
-			<h3 class="hny-title mb-0 text-center" id="brand">Shop By Brand</h3>
-			<p class="mb-4 text-center"></p>
+			<h3 class="hny-title mb-0 text-center">Shop By Brand</h3>
+			<p class="mb-4 text-center">Handpicked Favourites just for you</p>
 			<div class="welcome-grids row mt-5">
 				<div class="col-lg-2 col-md-4 col-6 welcome-image">
 						<div class="boxhny13">
@@ -628,7 +645,7 @@
 									<li><a href="index.php">Home</a></li>
 									<li><a href="#">About</a></li>
 									<li><a href="#">Blog</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="contact_new.php">Contact</a></li>
 								</ul>
 								<ul>
 									<li><a href="#">Careers</a></li>
@@ -707,11 +724,10 @@
 	<!-- /move top -->
 </section>
 
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+<!--/login-->
 <script>
 		$(document).ready(function () {
 			$(".button-log a").click(function () {
@@ -782,7 +798,45 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('[data-toggle="tooltip"]').tooltip(); 						//For tooltip toggling
+		$(".addItemBtn").click(function(e){
+			e.preventDefault();                     //this function will stop refreshing page when we click on "Add to cart" button. Sending data to the server without page refreshing.(Send data to the server is using ajax)
+			
+			//For getting the specific product value of input type hidden
+			var $form = $(this).closest(".form-submit");
+			var pid = $form.find(".pid").val();             //get the value from input field of id and assigning to var pid
+			var pname = $form.find(".pname").val();         //get the value from input field of product name and assigning to var pname
+			var pprice = $form.find(".pprice").val();       // "    "
+			var pimage = $form.find(".pimage").val();
+			var pcode = $form.find(".pcode").val();
+
+			//Now we will send a request using ajax to the server
+			$.ajax({
+				url: 'action.php',
+				method: 'post',
+				data: {pid:pid,pname:pname,pprice:pprice,pimage:pimage,pcode:pcode},        //assigning each variables in ajax and these datas are sending to server.
+				success: function(response){
+					$("#message").html(response);           //html response comeback from the server displays in id="message" ie.,When we click Add to cart displays a success alert
+					
+					load_cart_item_number();
+				}
+			});
+		});
+		
+		load_cart_item_number();
+            
+            //To show number of cart items(showing near cart symbol in top of the home page) when clicking Add to cart. For this we need to use ajax to send a request to the server.
+		function load_cart_item_number(){
+			$.ajax({
+				url: 'action.php',
+				method: 'get',
+				data: {cartItem:"cart_item"},
+				success: function(response){
+					$(".cart-item").html(response);
+				}
+			});
+		}
+
+		$('[data-toggle="tooltip"]').tooltip(); 
     });
 </script>
 
