@@ -30,7 +30,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Fonzone :: Checkout</title>
   <link rel="icon" href="assets/images/logo.jpg" type="image/jpg">
-  
+
   <!-- Template CSS -->
   <link rel="stylesheet" href="assets/css/style-liberty.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -147,8 +147,8 @@
                         <select name="pmode" class="form-control" required="">
                             <option value="" selected disabled>-Select Payment Mode-</option>
                             <option value="COD">Cash On Delivery</option>
-                            <option value="Net Banking" selected disabled>Net Banking</option>
-                            <option value="Debit Card" selected disabled>Debit Card</option>
+                            <option value="Net Banking">Net Banking</option>
+                            <option value="Debit Card">Debit Card</option>
                         </select>
                     </div>
                     <div class="form-group">
